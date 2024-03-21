@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Artikel</title>
+</head>
+<body>
+{% extends 'layout.html'%}
+{% block container %}
+<!--    <h1>{{object.title}}</h1>-->
+<!--    <p>{{object.content}}</p>-->
+<!--    <p>Author : {{object.created_by.username}}</p>-->
+<!--    <p>Published : {{object.created_at | date}}</p>-->
+
+<!--    <a href="/articles/shows/">Kembali ke halaman semula</a>-->
+<div class="card text-center">
+    <div class="card-header">
+        Author : {{object.created_by.username}}
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">{{object.title}}</h3>
+        <p class="card-text">{{object.content}}</p>
+        <a href="/articles/shows/" class="btn btn-primary">&rarr;Kembali ke halaman semula</a>
+        <a href="/articles?uuid={{object.uuid}}" class="btn btn-primary">&rarr; Edit Article</a>
+        <a href="/articles/{{object.uuid}}/delete" class="btn btn-primary">&rarr; Delete Article</a>
+    </div>
+    <div class="card-footer text-muted">
+        Published : {{object.created_at | date}}
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+</body>
+</html>

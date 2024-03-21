@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artikel</title>
+</head>
+<body>
+    {% extends 'layout.html'%}
+    {% block container %}
+    <h1>Semua Artikel</h1>
+    <ul>
+        {% for item in object_list %}
+        <li>
+            <div class="list-group">
+           <a href="/articles/read/{{item.uuid}}" class="list-group-item list-group-item-action" aria-current="true">{{item.title}} - {{item.created_at}} </a>
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+    {% endblock %}
+</body>
+</html>
